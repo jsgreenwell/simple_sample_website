@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Elegance by Sofia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Navigation Menu -->
+        <aside class="left-menu">
+            <div class="logo">
+                <h1>ELEGANCE</h1>
+                <p>by Sofia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="schedule.html">Book Appointment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="login-link">Login</a></li>
+                    <li class="login-required"><a href="payment.html">Pay Your Bill</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="page-header">
+                <h2>My Portfolio</h2>
+                <p class="tagline">A Showcase of Style & Artistry</p>
+            </header>
+
+            <!-- Portfolio Introduction -->
+            <div class="portfolio-intro">
+                <p>Browse through my collection of styling transformations, makeup artistry, and creative work. Each piece represents a unique collaboration with my clients.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="outfit">Outfits</button>
+                <button class="filter-btn" data-filter="makeup">Makeup</button>
+                <button class="filter-btn" data-filter="art">Art</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Outfit Items -->
+                <div class="portfolio-item" data-category="outfit">
+                    <div class="portfolio-image outfit">👗</div>
+                    <div class="portfolio-info">
+                        <h4>Elegant Evening Gown</h4>
+                        <p>Styled for a charity gala event</p>
+                        <span class="category">Outfit</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="makeup">
+                    <div class="portfolio-image makeup">💄</div>
+                    <div class="portfolio-info">
+                        <h4>Bridal Makeup</h4>
+                        <p>Natural glam for a summer wedding</p>
+                        <span class="category">Makeup</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="art">
+                    <div class="portfolio-image art">🎨</div>
+                    <div class="portfolio-info">
+                        <h4>Fashion Illustration</h4>
+                        <p>Custom sketch for a designer collection</p>
+                        <span class="category">Art</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="outfit">
+                    <div class="portfolio-image outfit">👔</div>
+                    <div class="portfolio-info">
+                        <h4>Corporate Wardrobe</h4>
+                        <p>Complete professional wardrobe makeover</p>
+                        <span class="category">Outfit</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="makeup">
+                    <div class="portfolio-image makeup">✨</div>
+                    <div class="portfolio-info">
+                        <h4>Editorial Makeup</h4>
+                        <p>Bold look for magazine photoshoot</p>
+                        <span class="category">Makeup</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="art">
+                    <div class="portfolio-image art">🖼️</div>
+                    <div class="portfolio-info">
+                        <h4>Mood Board Creation</h4>
+                        <p>Seasonal color palette inspiration</p>
+                        <span class="category">Art</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="outfit">
+                    <div class="portfolio-image outfit">👠</div>
+                    <div class="portfolio-info">
+                        <h4>Cocktail Party Look</h4>
+                        <p>Chic ensemble for a milestone birthday</p>
+                        <span class="category">Outfit</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="makeup">
+                    <div class="portfolio-image makeup">🌟</div>
+                    <div class="portfolio-info">
+                        <h4>Red Carpet Ready</h4>
+                        <p>Glamorous makeup for film premiere</p>
+                        <span class="category">Makeup</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="art">
+                    <div class="portfolio-image art">✏️</div>
+                    <div class="portfolio-info">
+                        <h4>Style Guide Design</h4>
+                        <p>Personal lookbook creation</p>
+                        <span class="category">Art</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2025 Elegance by Sofia. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- jQuery from CDN with SRI integrity check -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Portfolio filter functionality
+            $('.filter-btn').on('click', function() {
+                var filter = $(this).data('filter');
+                
+                // Update active button
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                // Filter items
+                if (filter === 'all') {
+                    $('.portfolio-item').fadeIn(300);
+                } else {
+                    $('.portfolio-item').hide();
+                    $('.portfolio-item[data-category="' + filter + '"]').fadeIn(300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,901 @@
+/* Main Styles for Personal Stylist Website */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #faf8f5;
+}
+
+/* Layout Container */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Navigation Menu */
+.left-menu {
+    width: 250px;
+    background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.left-menu .logo {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 20px;
+}
+
+.left-menu .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #d4af37;
+}
+
+.left-menu .logo p {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+.left-menu nav ul {
+    list-style: none;
+}
+
+.left-menu nav ul li {
+    border-bottom: 1px solid #333;
+}
+
+.left-menu nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.left-menu nav ul li a:hover,
+.left-menu nav ul li a.active {
+    background-color: #333;
+    color: #d4af37;
+    padding-left: 35px;
+}
+
+.left-menu nav ul li a i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+/* Hidden menu item for logged-out users */
+.left-menu nav ul li.login-required {
+    display: none;
+}
+
+.left-menu nav ul li.login-required.show {
+    display: block;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 40px;
+}
+
+/* Header Section */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f5f0e8 0%, #e8e0d5 100%);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.page-header .tagline {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Bio Section */
+.bio-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.bio-image {
+    flex: 0 0 300px;
+}
+
+.bio-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bio-image .placeholder-image {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.bio-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bio-text h3 {
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.bio-text p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Services Pitch Section */
+.services-section {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+}
+
+.services-section h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #faf8f5;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Call to Action */
+.cta-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.cta-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.cta-section p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* ============================================
+   LOGIN PAGE STYLES
+   ============================================ */
+
+.login-section {
+    max-width: 450px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.login-section h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.login-section .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.form-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.form-footer a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: #fff;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+.message.success {
+    background: #28a745;
+}
+
+.message.error {
+    background: #dc3545;
+}
+
+.message.info {
+    background: #17a2b8;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   PORTFOLIO PAGE STYLES
+   ============================================ */
+
+.portfolio-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.portfolio-intro p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    border-color: #d4af37;
+    color: #fff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.portfolio-image.outfit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.portfolio-image.makeup {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.portfolio-image.art {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h4 {
+    color: #2c2c2c;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.portfolio-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.portfolio-info .category {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #f5f0e8;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* ============================================
+   SCHEDULE PAGE STYLES
+   ============================================ */
+
+.schedule-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.schedule-info {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-info h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.schedule-info p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.service-options {
+    margin-top: 30px;
+}
+
+.service-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #faf8f5;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-option .icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
+.service-option .details h4 {
+    color: #2c2c2c;
+    margin-bottom: 5px;
+}
+
+.service-option .details p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.schedule-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-form h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* ============================================
+   CONTACT PAGE STYLES
+   ============================================ */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.contact-info p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item .icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.contact-item .details h4 {
+    color: #2c2c2c;
+    margin-bottom: 3px;
+    font-size: 1rem;
+}
+
+.contact-item .details p {
+    color: #666;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: #f5f0e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #d4af37 0%, #b8942d 100%);
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   PAYMENT PAGE STYLES
+   ============================================ */
+
+.payment-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-notice {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.payment-notice p {
+    color: #856404;
+    margin: 0;
+}
+
+.invoice-summary {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.invoice-summary h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 25px;
+    font-weight: 400;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.invoice-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.invoice-item:last-child {
+    border-bottom: none;
+}
+
+.invoice-item .description {
+    color: #333;
+}
+
+.invoice-item .amount {
+    color: #2c2c2c;
+    font-weight: 500;
+}
+
+.invoice-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 2px solid #2c2c2c;
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.invoice-total .label {
+    font-weight: 500;
+    color: #2c2c2c;
+}
+
+.invoice-total .amount {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.payment-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.payment-form h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.card-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.card-icon {
+    padding: 8px 15px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.secure-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: #28a745;
+    font-size: 0.9rem;
+}
+
+.secure-notice span {
+    margin-left: 8px;
+}
+
+/* Login Required Message */
+.login-required-message {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.login-required-message h3 {
+    font-size: 1.5rem;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+}
+
+.login-required-message p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .bio-section {
+        flex-direction: column;
+    }
+
+    .bio-image {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .page-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .schedule-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .login-section {
+        padding: 30px;
+    }
+}

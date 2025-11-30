@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Elegance by Sofia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Navigation Menu -->
+        <aside class="left-menu">
+            <div class="logo">
+                <h1>ELEGANCE</h1>
+                <p>by Sofia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="schedule.html">Book Appointment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="login-link active">Login</a></li>
+                    <li class="login-required"><a href="payment.html">Pay Your Bill</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="page-header">
+                <h2>Client Login</h2>
+                <p class="tagline">Access Your Account</p>
+            </header>
+
+            <!-- Login Form -->
+            <section class="login-section">
+                <h3>Welcome Back</h3>
+                <p class="subtitle">Sign in to manage your appointments and payments</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="form-button">Sign In</button>
+                </form>
+
+                <div class="form-footer">
+                    <p>New client? <a href="contact.html">Contact us</a> to get started.</p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2025 Elegance by Sofia. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- jQuery from CDN with SRI integrity check -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(e) {
+                e.preventDefault();
+                var username = $('#username').val();
+                var password = $('#password').val();
+                
+                if (login(username, password)) {
+                    showMessage('Login successful! Redirecting...', 'success');
+                    setTimeout(function() {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    showMessage('Invalid credentials. Username must be at least 3 characters and password at least 6 characters.', 'error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
