@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Elegance by Sofia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Navigation Menu -->
+        <aside class="left-menu">
+            <div class="logo">
+                <h1>ELEGANCE</h1>
+                <p>by Sofia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="schedule.html" class="active">Book Appointment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="login-link">Login</a></li>
+                    <li class="login-required"><a href="payment.html">Pay Your Bill</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="page-header">
+                <h2>Book an Appointment</h2>
+                <p class="tagline">Let's Begin Your Style Journey</p>
+            </header>
+
+            <!-- Schedule Section -->
+            <div class="schedule-section">
+                <!-- Service Information -->
+                <div class="schedule-info">
+                    <h3>Available Services</h3>
+                    <p>Choose from our range of styling and beauty services. Each consultation begins with understanding your unique needs and goals.</p>
+                    
+                    <div class="service-options">
+                        <div class="service-option">
+                            <div class="icon">👗</div>
+                            <div class="details">
+                                <h4>Personal Styling Session</h4>
+                                <p>2-3 hours | $150</p>
+                            </div>
+                        </div>
+                        <div class="service-option">
+                            <div class="icon">🛍️</div>
+                            <div class="details">
+                                <h4>Wardrobe Consultation</h4>
+                                <p>3-4 hours | $200</p>
+                            </div>
+                        </div>
+                        <div class="service-option">
+                            <div class="icon">💄</div>
+                            <div class="details">
+                                <h4>Makeup Application</h4>
+                                <p>1-2 hours | $100</p>
+                            </div>
+                        </div>
+                        <div class="service-option">
+                            <div class="icon">✨</div>
+                            <div class="details">
+                                <h4>Complete Makeover Package</h4>
+                                <p>Full day | $500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="schedule-form">
+                    <h3>Request an Appointment</h3>
+                    <form id="scheduleForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Select Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choose a service...</option>
+                                <option value="personal-styling">Personal Styling Session - $150</option>
+                                <option value="wardrobe-consultation">Wardrobe Consultation - $200</option>
+                                <option value="makeup">Makeup Application - $100</option>
+                                <option value="makeover">Complete Makeover Package - $500</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select time...</option>
+                                    <option value="9:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes" placeholder="Tell us about any specific requests or what you're looking to achieve..."></textarea>
+                        </div>
+                        <button type="submit" class="form-button">Request Appointment</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2025 Elegance by Sofia. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- jQuery from CDN with SRI integrity check -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Set minimum date to today
+            var today = new Date().toISOString().split('T')[0];
+            $('#date').attr('min', today);
+
+            $('#scheduleForm').on('submit', function(e) {
+                e.preventDefault();
+                showMessage('Appointment request submitted! We will contact you within 24 hours to confirm.', 'success');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
