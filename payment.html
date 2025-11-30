@@ -52,11 +52,11 @@
                 <div class="invoice-summary">
                     <h3>Current Invoice</h3>
                     <div class="invoice-item">
-                        <span class="description">Personal Styling Session (Nov 15, 2025)</span>
+                        <span class="description">Personal Styling Session</span>
                         <span class="amount">$150.00</span>
                     </div>
                     <div class="invoice-item">
-                        <span class="description">Makeup Application (Nov 15, 2025)</span>
+                        <span class="description">Makeup Application</span>
                         <span class="amount">$100.00</span>
                     </div>
                     <div class="invoice-item">
@@ -133,13 +133,19 @@
             // Format card number with spaces
             $('#cardNumber').on('input', function() {
                 var value = $(this).val().replace(/\s/g, '').replace(/\D/g, '');
-                var formatted = value.match(/.{1,4}/g);
-                $(this).val(formatted ? formatted.join(' ') : '');
+                if (value.length > 0) {
+                    var formatted = value.match(/.{1,4}/g);
+                    $(this).val(formatted ? formatted.join(' ') : '');
+                } else {
+                    $(this).val('');
+                }
             });
 
             // Format expiry date
             $('#expiry').on('input', function() {
                 var value = $(this).val().replace(/\D/g, '');
+                // Limit to 4 digits (MMYY)
+                value = value.substring(0, 4);
                 if (value.length >= 2) {
                     value = value.substring(0, 2) + '/' + value.substring(2);
                 }
